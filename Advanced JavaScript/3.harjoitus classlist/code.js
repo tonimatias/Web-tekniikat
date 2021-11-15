@@ -1,8 +1,23 @@
-let button = document.querySelector("button")
+let p = document.querySelector('p')
+document.querySelector('button').addEventListener('click', buttonClick2)
 
-button.addEventListener('click', buttonClicked)
+let input = document.querySelector('input')
 
-function buttonClicked(){
-    let div = document.querySelector('div')
-    button.classList.toggle.div = ("style", "background-color = blue")
+
+function buttonClick(){
+    p.classList.toggle('colored')
+}
+
+function buttonClick2(){
+    p.style.backgroundColor = input.value
+}
+
+
+
+let items = document.querySelectorAll('li')
+
+for (const i of items){
+    if(i.textContent.includes('important')){
+        i.classList.add('important')
+    }
 }

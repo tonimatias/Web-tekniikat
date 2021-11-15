@@ -1,0 +1,8 @@
+.colored{
+    background-color: firebrick;
+}
+
+.important{
+    font-weight: bold;
+    color: red;
+}
