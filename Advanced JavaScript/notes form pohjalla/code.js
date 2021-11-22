@@ -1,22 +1,25 @@
 //Lisätään napin kuuntelijafunktio
-document.querySelector("button").addEventListener("click", addNote)
-//Haetaan dokumentin elementit
+let form = document.querySelector("form")
+form.addEventListener("submit", addNote)
 let body = document.querySelector("body")
-let user = document.getElementById("name")
-let note = document.getElementById("note")
-let checkbox = document.getElementById("important")
 
 
-function addNote(){
+function addNote(event){
+    event.preventDefault()
+
+    FormData = new FormData(form)
     //Luodaan otsikko johon tulee nimi-kentästä nimi ja lisäksi aikaleima
     let h3 = document.createElement("h3")
-    h3.textContent = user.value + "  " + new Date().toLocaleString();
-    //Itse note lisätänään tekstinä p-elementtiin textareasta
+    h3.textContent = FormData.get("name") + "  " + new Date().toLocaleString();
+
+    //Itse note lisätään tekstinä p-elementtiin textareasta
     let p = document.createElement("p")
-    p.textContent = note.value
+    p.textContent = FormData.get("note")
+
+    console.log(formData.get("important"));
 
     //Jos checkbox valittu, lisätään important muotoilu
-    if(checkbox.checked){
+    if(formData.get("important")){
         h3.classList.add("important")
         p.classList.add("important")
     }

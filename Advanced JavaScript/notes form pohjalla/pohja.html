@@ -9,13 +9,14 @@
     <script src="code.js" defer></script>
 </head>
 <body>
-    <label>Name:</label><br>
-    <input type="text" name="name" id="name"><br>
-    <label>Note</label><br>
-    <textarea id="note"></textarea><br>
-    <input type="checkbox" name="important" id="important">
-    <label for="important">Important</label> <br>
-    <button>Ok</button>
-    <hr>
+    <form>
+        <label>Name:</label><br>
+        <input type="text" name="name" id="name"><br>
+        <label>Note</label><br>
+        <textarea name="note" id="note"></textarea><br>
+        <input type="checkbox" name="important" id="important" value="yes">
+        <label for="important">Important</label> <br>
+        <button type="submit">Ok</button>
+    </form>
 </body>
 </html>
